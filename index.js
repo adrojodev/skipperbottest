@@ -1,4 +1,3 @@
-import { config } from "dotenv";
 import {
   ActionRowBuilder,
   Client,
