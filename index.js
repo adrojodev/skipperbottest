@@ -14,8 +14,6 @@ import channelsCommand from "./commands/channel.js";
 import registerCommand from "./commands/register.js";
 import { REST } from "@discordjs/rest";
 
-config();
-
 const token = process.env.BOT_TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
 const GUILD_ID = process.env.GUILD_ID;
