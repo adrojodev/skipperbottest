@@ -14,6 +14,8 @@ import promptCommand from "./commands/prompt.js";
 import { REST } from "@discordjs/rest";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, onValue } from "firebase/database";
+import { config } from "dotenv";
+config();
 
 function makeid() {
   var result = "";
@@ -54,10 +56,9 @@ onValue(ref(database, "interactions"), (snapshot) => {
   });
 });
 
-const token =
-  "MTAwMzc2NTY0NjAwMzI3MzczOA.Gbvdko.St4OaRKtLjnvF2VVHhYIRPRVb2aAgu4ECO-dbE";
-const CLIENT_ID = "1003765646003273738";
-const GUILD_ID = "1003777028828438661";
+const token = process.env.BOT_TOKEN;
+const CLIENT_ID = process.env.CLIENT_ID;
+const GUILD_ID = process.env.GUILD_ID;
 
 const client = new Client({
   intents: ["Guilds", "GuildMessages", "MessageContent"],
